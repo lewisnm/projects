@@ -17,15 +17,13 @@ hash_table_t *hash_table_create(unsigned long int size)
 	{
 		return (NULL);
 	}
-
 	ht->size = size;
-	ht->table = malloc(size * sizeof(struct HashNode*));
+	ht->table = malloc(size * sizeof(hash_node_t *));
 	if (ht->table == NULL)
 	{
 		free(ht);
 		return (NULL);
 	}
-
 	for (i = 0; i < size; i++)
 	{
 		ht->table[i] = NULL;
